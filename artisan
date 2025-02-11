@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+
+use Symfony\Component\Console\Input\ArgvInput;
+
+define('LARAVEL_START', microtime(true));
+
+require __DIR__ . '/vendor/autoload.php';
+
+
+$app = require_once __DIR__ . '/bootstrap/app.php';
+
+if (!method_exists($app, 'handleCommand')) {
+    fwrite(STDERR, "Error: handleCommand method not defined in bootstrap/app.php.\n");
+    exit(1);
+}
+
+$status = $app->handleCommand(new ArgvInput());
+
+exit($status);
