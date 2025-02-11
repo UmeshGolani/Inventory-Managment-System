@@ -1,4 +1,4 @@
-# Using StockHive
+# Using Inventory Management System (Stockhive)
 
 ## Cloning
 Clone the project files to your xampp htdocs.
